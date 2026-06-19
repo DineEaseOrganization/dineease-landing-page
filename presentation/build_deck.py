@@ -423,7 +423,74 @@ para(tf, "*Competitor pricing from public sources, mid-2026, indicative. OpenTab
 page_no(s, 8)
 
 # ════════════════════════════════════════════════════════════════════════════
-# 9 — THE COST ADVANTAGE (math)
+# 9 — DINEEASE vs EAT APP (closest competitor, side by side)
+# ════════════════════════════════════════════════════════════════════════════
+s = slide(NAVY)
+kicker(s, "Our closest competitor")
+_, tf = box(s, Inches(0.9), Inches(1.05), Inches(11.5), Inches(0.9))
+para(tf, "DineEase vs Eat App — same idea, built for Cyprus", 30,
+     WHITE, font=SERIF, bold=True, first=True)
+_, tf = box(s, Inches(0.95), Inches(1.8), Inches(11.5), Inches(0.5))
+para(tf, "Both are flat-fee and commission-free. The difference is how you're "
+         "priced — and who fills your tables.", 14, GOLD, first=True, space_after=0)
+
+# DineEase card
+rect(s, Inches(0.7), Inches(2.45), Inches(6.0), Inches(3.45), TEAL, line=GOLD, line_w=2)
+_, tf = box(s, Inches(1.05), Inches(2.7), Inches(5.4), Inches(3.1))
+para(tf, "DINEEASE", 16, GOLD, bold=True, first=True, space_after=2)
+para(tf, "Priced per location · covers never capped · EUR, VAT incl.", 12.5,
+     OFFWHITE, italic=True, space_after=10)
+for name, price, detail in [
+    ("Essentials", "€60/mo", "1 location"),
+    ("Duo", "€104/mo", "up to 2 locations"),
+    ("Group", "€144/mo", "up to 3 locations"),
+    ("Portfolio", "€200/mo", "4–5 locations"),
+]:
+    p = tf.add_paragraph(); p.space_after = Pt(7); p.line_spacing = 1.0
+    r = p.add_run(); r.text = f"{name}  "; r.font.size = Pt(15); r.font.bold = True
+    r.font.name = SANS; r.font.color.rgb = WHITE
+    r = p.add_run(); r.text = f"{price}"; r.font.size = Pt(15); r.font.bold = True
+    r.font.name = SERIF; r.font.color.rgb = GOLD
+    r = p.add_run(); r.text = f"   ·  {detail}"; r.font.size = Pt(12.5)
+    r.font.name = SANS; r.font.color.rgb = MUTED
+para(tf, "+ your venue in the DineEase consumer app for Cyprus diners", 12.5,
+     GOLD, space_before=4, space_after=0)
+
+# Eat App card
+rect(s, Inches(6.95), Inches(2.45), Inches(5.7), Inches(3.45), CARD, line=TEAL_MID, line_w=1)
+_, tf = box(s, Inches(7.3), Inches(2.7), Inches(5.1), Inches(3.1))
+para(tf, "EAT APP", 16, MUTED, bold=True, first=True, space_after=2)
+para(tf, "Priced by covers & add-ons · USD · no local diner audience", 12.5,
+     MUTED, italic=True, space_after=10)
+for name, price, detail in [
+    ("Free", "$0/mo", "up to 100 covers/mo"),
+    ("Starter", "$48/mo", "up to 300 covers/mo"),
+    ("Essential", "$111/mo", "unlimited covers"),
+    ("Pro", "$209/mo", "unlimited covers"),
+]:
+    p = tf.add_paragraph(); p.space_after = Pt(7); p.line_spacing = 1.0
+    r = p.add_run(); r.text = f"{name}  "; r.font.size = Pt(15); r.font.bold = True
+    r.font.name = SANS; r.font.color.rgb = WHITE
+    r = p.add_run(); r.text = f"{price}"; r.font.size = Pt(15); r.font.bold = True
+    r.font.name = SERIF; r.font.color.rgb = OFFWHITE
+    r = p.add_run(); r.text = f"   ·  {detail}"; r.font.size = Pt(12.5)
+    r.font.name = SANS; r.font.color.rgb = MUTED
+para(tf, "Reservation software only — you fill the tables yourself", 12.5,
+     MUTED, space_before=4, space_after=0)
+
+_, tf = box(s, Inches(0.7), Inches(6.05), Inches(11.95), Inches(0.95))
+para(tf, "Takeaway:  Eat App caps covers on cheaper plans, prices in USD, and bills "
+         "$19–$39/mo add-ons for waitlist, CRM & reports — even on its recommended "
+         "plan. DineEase includes every feature in each tier, priced per location in "
+         "EUR (VAT incl.), and sends Cyprus diners your way.",
+     13, OFFWHITE, first=True, align=PP_ALIGN.CENTER, line=1.2, space_after=0)
+_, tf = box(s, Inches(0.7), Inches(7.02), Inches(11.95), Inches(0.35))
+para(tf, "Eat App prices: yearly billing (30% off), per restaurant.eatapp.co, 2026.",
+     9.5, MUTED, first=True, align=PP_ALIGN.CENTER, italic=True, space_after=0)
+page_no(s, 9)
+
+# ════════════════════════════════════════════════════════════════════════════
+# 10 — THE COST ADVANTAGE (math)
 # ════════════════════════════════════════════════════════════════════════════
 s = slide(NAVY)
 kicker(s, "The cost advantage")
@@ -460,10 +527,10 @@ _, tf = box(s, Inches(0.9), Inches(6.35), Inches(11.5), Inches(0.6))
 para(tf, "With DineEase your cost is predictable. The more diners we send you, the "
          "more you save versus commission models.", 14, OFFWHITE, first=True,
      align=PP_ALIGN.CENTER, space_after=0)
-page_no(s, 9)
+page_no(s, 10)
 
 # ════════════════════════════════════════════════════════════════════════════
-# 10 — WHY DINEEASE FOR CYPRUS
+# 11 — WHY DINEEASE FOR CYPRUS
 # ════════════════════════════════════════════════════════════════════════════
 s = slide(TEAL)
 kicker(s, "Why DineEase")
@@ -487,7 +554,7 @@ for i, (ic, h, d) in enumerate(points):
     _, tf = box(s, x + Inches(0.35), y + Inches(0.3), cw - Inches(0.7), ch - Inches(0.5))
     para(tf, ic + "  " + h, 19, GOLD, font=SERIF, bold=True, first=True, space_after=8)
     para(tf, d, 14.5, OFFWHITE, line=1.25)
-page_no(s, 10)
+page_no(s, 11)
 
 # ════════════════════════════════════════════════════════════════════════════
 # 11 — CALL TO ACTION
