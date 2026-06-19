@@ -367,22 +367,22 @@ para(tf, "Built for Cyprus restaurants — not the other way round", 30,
      WHITE, font=SERIF, bold=True, first=True)
 
 rows = [
-    ["", "DineEase", "OpenTable", "TheFork / Quandoo", "Klisto (CY)"],
-    ["Pricing model", "Flat subscription", "Subscription + fees", "Commission per cover", "Marketplace"],
-    ["Per-cover commission", "None", "$1–1.50 / cover*", "~€2.60 / guest*", "Varies"],
-    ["Restaurant-specialised", "Yes", "Yes", "Yes", "Multi-vertical"],
-    ["Own customer app", "Yes", "Yes", "Yes", "Yes"],
-    ["Cyprus-focused & EUR", "Yes — VAT incl.", "No (USD)", "Limited in CY", "Yes"],
-    ["Cost as you grow", "Stays flat", "Rises per cover", "Rises per cover", "Varies"],
+    ["", "DineEase", "Eat App", "OpenTable", "TheFork / Quandoo", "Klisto (CY)"],
+    ["Pricing model", "Flat subscription", "Flat subscription", "Subscription + fees", "Commission per cover", "Marketplace"],
+    ["Per-cover commission", "None", "None", "$1–1.50 / cover*", "~€2.60 / guest*", "Varies"],
+    ["Restaurant-specialised", "Yes", "Yes", "Yes", "Yes", "Multi-vertical"],
+    ["Own customer app", "Yes", "Limited", "Yes", "Yes", "Yes"],
+    ["Cyprus-focused & EUR", "Yes — VAT incl.", "No (USD)", "No (USD)", "Limited in CY", "Yes"],
+    ["Cost as you grow", "Stays flat", "Stays flat", "Rises per cover", "Rises per cover", "Varies"],
 ]
-nrows = len(rows); ncols = 5
+nrows = len(rows); ncols = 6
 tx = Inches(0.7); ty = Inches(2.05)
 tw = Inches(11.93); th = Inches(4.5)
 tbl_shape = s.shapes.add_table(nrows, ncols, tx, ty, tw, th)
 table = tbl_shape.table
-table.columns[0].width = Inches(3.03)
-for c in range(1, 5):
-    table.columns[c].width = Inches(2.225)
+table.columns[0].width = Inches(2.63)
+for c in range(1, 6):
+    table.columns[c].width = Inches(1.86)
 table.first_row = False
 table.horz_banding = False
 
@@ -407,14 +407,14 @@ for ri, row in enumerate(rows):
         r = p.add_run(); r.text = val
         f = r.font
         if ri == 0:
-            f.size = Pt(13); f.bold = True; f.name = SERIF
+            f.size = Pt(12); f.bold = True; f.name = SERIF
             f.color.rgb = NAVY if ci == 1 else WHITE
         elif ci == 0:
-            f.size = Pt(12.5); f.bold = True; f.name = SANS; f.color.rgb = WHITE
+            f.size = Pt(11); f.bold = True; f.name = SANS; f.color.rgb = WHITE
         elif ci == 1:
-            f.size = Pt(12.5); f.bold = True; f.name = SANS; f.color.rgb = NAVY
+            f.size = Pt(11); f.bold = True; f.name = SANS; f.color.rgb = NAVY
         else:
-            f.size = Pt(12); f.name = SANS; f.color.rgb = MUTED
+            f.size = Pt(10.5); f.name = SANS; f.color.rgb = MUTED
 
 _, tf = box(s, Inches(0.7), Inches(6.75), Inches(11.9), Inches(0.4))
 para(tf, "*Competitor pricing from public sources, mid-2026, indicative. OpenTable / "
