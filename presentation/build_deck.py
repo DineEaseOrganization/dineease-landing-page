@@ -428,9 +428,9 @@ page_no(s, 8)
 s = slide(NAVY)
 kicker(s, "Our closest competitor")
 _, tf = box(s, Inches(0.9), Inches(1.05), Inches(11.5), Inches(0.9))
-para(tf, "DineEase vs Eat App — same idea, built for Cyprus", 30,
+para(tf, "DineEase vs Eat App — built for Cyprus", 30,
      WHITE, font=SERIF, bold=True, first=True)
-_, tf = box(s, Inches(0.95), Inches(1.8), Inches(11.5), Inches(0.5))
+_, tf = box(s, Inches(0.95), Inches(1.85), Inches(11.5), Inches(0.5))
 para(tf, "Both are flat-fee and commission-free. The difference is how you're "
          "priced — and who fills your tables.", 14, GOLD, first=True, space_after=0)
 
